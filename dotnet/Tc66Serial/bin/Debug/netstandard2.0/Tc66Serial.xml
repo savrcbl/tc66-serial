@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tc66Serial</name>
+    </assembly>
+    <members>
+        <member name="T:Tc66Serial.Crc16">
+            <summary>
+            CRC-16/MODBUS implementation used to validate the 64-byte packets returned by TC66 devices.
+            </summary>
+        </member>
+        <member name="M:Tc66Serial.Crc16.ComputeModbus(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes the CRC-16/MODBUS checksum over <paramref name="length"/> bytes of
+            <paramref name="data"/>, starting at <paramref name="offset"/>.
+            </summary>
+        </member>
+        <member name="M:Tc66Serial.Crc16.ValidatePacket(System.Byte[])">
+            <summary>
+            Validates a 64-byte TC66 packet. The CRC-16/MODBUS checksum is computed over
+            the first 60 bytes and compared against the little-endian uint32 stored at offset 60
+            (only the lower 16 bits of which are meaningful).
+            </summary>
+        </member>
+        <member name="T:Tc66Serial.Tc66Client">
+            <summary>
+            A client for reading measurements from an RDTech/FNIRSI TC66 or TC66C USB power meter
+            over a serial (virtual COM port) connection.
+            </summary>
+            <remarks>
+            This class is not thread-safe. Use one <see cref="T:Tc66Serial.Tc66Client"/> instance per device
+            and avoid calling its members concurrently from multiple threads.
+            </remarks>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates a client for the given serial port. Call <see cref="M:Tc66Serial.Tc66Client.Connect"/> before use.
+            </summary>
+            <param name="portName">The OS device name, e.g. "COM10" on Windows or "/dev/ttyACM0" on Linux.</param>
+            <param name="baudRate">Baud rate to use. TC66 devices default to 115200.</param>
+            <param name="timeoutMs">Read/write timeout, in milliseconds.</param>
+        </member>
+        <member name="P:Tc66Serial.Tc66Client.PortName">
+            <summary>The serial port name this client was constructed with.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Client.IsConnected">
+            <summary>True if the underlying serial port is currently open.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.Connect">
+            <summary>Opens the underlying serial connection.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.Disconnect">
+            <summary>Closes the underlying serial connection, if open.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.QueryMode">
+            <summary>Queries the device's current display mode.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.GetReading">
+            <summary>
+            Requests, decrypts and parses a full measurement snapshot from the device.
+            </summary>
+            <exception cref="T:Tc66Serial.Tc66ProtocolException">Thrown if the response is malformed.</exception>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.GetRawEncrypted">
+            <summary>Returns the raw, still-encrypted 192-byte response from the device. Useful for debugging.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.PreviousPage">
+            <summary>Navigates the device's on-screen display to the previous page.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.NextPage">
+            <summary>Navigates the device's on-screen display to the next page.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.RotateScreen">
+            <summary>Rotates the device's on-screen display.</summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Client.GetAvailablePorts">
+            <summary>Lists the serial ports currently visible to the operating system.</summary>
+        </member>
+        <member name="T:Tc66Serial.Tc66Codec">
+            <summary>
+            Decrypts and parses the 192-byte response returned by a TC66 device's "getva" command.
+            </summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Codec.Decrypt(System.Byte[])">
+            <summary>
+            Decrypts a raw 192-byte response using AES-256-ECB (no padding).
+            </summary>
+        </member>
+        <member name="M:Tc66Serial.Tc66Codec.Parse(System.Byte[])">
+            <summary>
+            Parses a decrypted 192-byte buffer (three 64-byte packets: "pac1", "pac2", "pac3")
+            into a <see cref="T:Tc66Serial.Tc66Reading"/>.
+            </summary>
+            <exception cref="T:Tc66Serial.Tc66ProtocolException">Thrown if the buffer is the wrong size or the packet headers are invalid.</exception>
+        </member>
+        <member name="T:Tc66Serial.Tc66ProtocolException">
+            <summary>
+            Thrown when a TC66 device returns a response that cannot be decrypted or parsed,
+            or that fails its CRC-16/MODBUS checksum.
+            </summary>
+        </member>
+        <member name="T:Tc66Serial.Tc66Reading">
+            <summary>
+            A single decoded measurement snapshot read from a TC66 / TC66C device.
+            </summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.ProductName">
+            <summary>Product name reported by the device (e.g. "TC66").</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Version">
+            <summary>Firmware version string reported by the device (e.g. "1.18").</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.SerialNumber">
+            <summary>Device serial number.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.RunCount">
+            <summary>Number of measurement runs recorded by the device.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Voltage">
+            <summary>Bus voltage, in volts.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Current">
+            <summary>Bus current, in amperes.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Power">
+            <summary>Bus power, in watts.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Resistance">
+            <summary>Estimated resistance of the load, in ohms.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Group0Mah">
+            <summary>Accumulated capacity for measurement group 0, in milliamp-hours.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Group0Mwh">
+            <summary>Accumulated energy for measurement group 0, in milliwatt-hours.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Group1Mah">
+            <summary>Accumulated capacity for measurement group 1, in milliamp-hours.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Group1Mwh">
+            <summary>Accumulated energy for measurement group 1, in milliwatt-hours.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.TemperatureNegative">
+            <summary>True if the reported temperature is negative.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Temperature">
+            <summary>Unsigned temperature magnitude reported by the device. Units (C or F) depend on the device's display setting.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.SignedTemperature">
+            <summary>Signed temperature, combining <see cref="P:Tc66Serial.Tc66Reading.TemperatureNegative"/> and <see cref="P:Tc66Serial.Tc66Reading.Temperature"/>.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.DPlusVoltage">
+            <summary>USB D+ line voltage, in volts.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.DMinusVoltage">
+            <summary>USB D- line voltage, in volts.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Pac1ChecksumValid">
+            <summary>True if the first 64-byte packet passed its CRC-16/MODBUS check.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Pac2ChecksumValid">
+            <summary>True if the second 64-byte packet passed its CRC-16/MODBUS check.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.Pac3ChecksumValid">
+            <summary>True if the third 64-byte packet passed its CRC-16/MODBUS check.</summary>
+        </member>
+        <member name="P:Tc66Serial.Tc66Reading.IsValid">
+            <summary>True if all three packets passed their CRC-16/MODBUS checks.</summary>
+        </member>
+    </members>
+</doc>

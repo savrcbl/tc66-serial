@@ -1,0 +1,14 @@
+D:\Projects\tc66-serial\dotnet\Tc66Serial\bin\Debug\net8.0\Tc66Serial.deps.json
+D:\Projects\tc66-serial\dotnet\Tc66Serial\bin\Debug\net8.0\Tc66Serial.dll
+D:\Projects\tc66-serial\dotnet\Tc66Serial\bin\Debug\net8.0\Tc66Serial.pdb
+D:\Projects\tc66-serial\dotnet\Tc66Serial\bin\Debug\net8.0\Tc66Serial.xml
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.csproj.AssemblyReference.cache
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.AssemblyInfoInputs.cache
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.AssemblyInfo.cs
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.csproj.CoreCompileInputs.cache
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.dll
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\refint\Tc66Serial.dll
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.xml
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\Tc66Serial.pdb
+D:\Projects\tc66-serial\dotnet\Tc66Serial\obj\Debug\net8.0\ref\Tc66Serial.dll

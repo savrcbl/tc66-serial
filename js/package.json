@@ -1,0 +1,62 @@
+{
+  "name": "tc66-serial",
+  "version": "0.1.0",
+  "description": "A library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from RDTech/FNIRSI TC66 and TC66C USB power meters over a serial connection.",
+  "keywords": [
+    "tc66",
+    "tc66c",
+    "usb",
+    "power-meter",
+    "serialport",
+    "rdtech",
+    "fnirsi",
+    "electronics"
+  ],
+  "license": "MIT",
+  "author": "YOUR_NAME",
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/tc66-serial.git",
+    "directory": "js"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "serialport": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.4.0"
+  }
+}
