@@ -122,11 +122,14 @@ npm run build
 ## Publishing
 
 Both packages are published from GitHub Actions when a tag matching `v*` is pushed
-(e.g. `v0.1.0`) — see [`.github/workflows`](.github/workflows). You'll need to add two
-repository secrets before this will work:
+(e.g. `v0.1.0`) — see [`.github/workflows`](.github/workflows).
 
-- `NUGET_API_KEY` — an API key from [nuget.org](https://www.nuget.org/account/apikeys)
-- `NPM_TOKEN` — an automation token from [npmjs.com](https://www.npmjs.com/settings/~/tokens)
+- **NuGet** uses [Trusted Publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing)
+  (OIDC, no long-lived key). Create a policy at nuget.org → your username → *Trusted
+  Publishing* pointing at this repo and the `dotnet.yml` workflow file, then add a
+  `NUGET_USER` repository secret containing your nuget.org username.
+- **npm** still uses a token: add an `NPM_TOKEN` repository secret — an automation token
+  from [npmjs.com](https://www.npmjs.com/settings/~/tokens).
 
 Bump the versions in `dotnet/Tc66Serial/Tc66Serial.csproj` and `js/package.json`, commit,
 tag, and push:
