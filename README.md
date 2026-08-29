@@ -1,6 +1,6 @@
 # tc66-serial
 
-Libraries for talking to **RDTech/FNIRSI TC66** and **TC66C** USB power meters over their
+Libraries for talking to **Ruideng TC66** and **TC66C** USB power meters over their
 serial (virtual COM port) interface — decrypting and parsing the device's live
 measurement stream into voltage, current, power, resistance, D+/D- line voltage, and
 capacity/energy counters.
@@ -13,9 +13,8 @@ This repo contains two packages, built from the same reverse-engineered protocol
 | [`tc66-serial`](js) | npm (Node.js) | `js` |
 
 > **Disclaimer:** This is an independent, community reverse-engineered client. It is not
-> affiliated with, endorsed by, or supported by RDTech, FNIRSI, or Ruideng. The wire
-> protocol was derived by observing device traffic and may not be complete or may change
-> across firmware versions.
+> affiliated with, endorsed by, or supported by Ruideng. The wire protocol was derived by
+> observing device traffic and may not be complete or may change across firmware versions.
 
 ## Supported devices
 
