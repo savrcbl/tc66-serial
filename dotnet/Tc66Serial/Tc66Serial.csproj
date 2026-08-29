@@ -13,7 +13,7 @@
     <!-- NuGet package metadata -->
     <PackageId>Tc66Serial</PackageId>
     <Version>0.1.0</Version>
-    <Authors>YOUR_NAME</Authors>
+    <Authors>savrcbl</Authors>
     <Description>A .NET library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from RDTech/FNIRSI TC66 and TC66C USB power meters over a serial connection.</Description>
     <PackageTags>tc66;tc66c;usb;power-meter;serialport;rdtech;fnirsi;electronics</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
