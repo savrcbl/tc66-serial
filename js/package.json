@@ -13,14 +13,14 @@
   ],
   "license": "MIT",
   "author": "savrcbl",
-  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial#readme",
+  "homepage": "https://github.com/savrcbl/tc66-serial#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/tc66-serial.git",
+    "url": "git+https://github.com/savrcbl/tc66-serial.git",
     "directory": "js"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial/issues"
+    "url": "https://github.com/savrcbl/tc66-serial/issues"
   },
   "type": "module",
   "main": "./dist/index.cjs",
