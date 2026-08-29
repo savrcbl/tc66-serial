@@ -18,8 +18,8 @@
     <PackageTags>tc66;tc66c;usb;power-meter;serialport;ruideng;electronics</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/YOUR_GITHUB_USERNAME/tc66-serial</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/YOUR_GITHUB_USERNAME/tc66-serial</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/savrcbl/tc66-serial</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/savrcbl/tc66-serial</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
