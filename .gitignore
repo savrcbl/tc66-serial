@@ -10,6 +10,14 @@ js/node_modules/
 js/dist/
 npm-debug.log*
 
+# Python
+python/dist/
+python/build/
+python/*.egg-info/
+python/__pycache__/
+python/**/__pycache__/
+python/.venv/
+
 # Editors / OS
 .vs/
 .vscode/
