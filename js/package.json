@@ -1,6 +1,6 @@
 {
   "name": "tc66-serial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from RDTech/FNIRSI TC66 and TC66C USB power meters over a serial connection.",
   "keywords": [
     "tc66",
