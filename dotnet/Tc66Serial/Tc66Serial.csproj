@@ -12,14 +12,14 @@
   <PropertyGroup>
     <!-- NuGet package metadata -->
     <PackageId>Tc66Serial</PackageId>
-    <Version>0.1.0</Version>
-    <Authors>YOUR_NAME</Authors>
-    <Description>A .NET library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from RDTech/FNIRSI TC66 and TC66C USB power meters over a serial connection.</Description>
-    <PackageTags>tc66;tc66c;usb;power-meter;serialport;rdtech;fnirsi;electronics</PackageTags>
+    <Version>1.0.0</Version>
+    <Authors>savrcbl</Authors>
+    <Description>A .NET library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from Ruideng TC66 and TC66C USB power meters over a serial connection.</Description>
+    <PackageTags>tc66;tc66c;usb;power-meter;serialport;ruideng;electronics</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/YOUR_GITHUB_USERNAME/tc66-serial</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/YOUR_GITHUB_USERNAME/tc66-serial</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/savrcbl/tc66-serial</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/savrcbl/tc66-serial</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>

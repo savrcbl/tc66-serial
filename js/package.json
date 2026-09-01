@@ -1,6 +1,6 @@
 {
   "name": "tc66-serial",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A library for reading live measurements (voltage, current, power, resistance, D+/D- voltage, mAh/mWh counters) from RDTech/FNIRSI TC66 and TC66C USB power meters over a serial connection.",
   "keywords": [
     "tc66",
@@ -8,20 +8,19 @@
     "usb",
     "power-meter",
     "serialport",
-    "rdtech",
-    "fnirsi",
+    "ruideng",
     "electronics"
   ],
   "license": "MIT",
-  "author": "YOUR_NAME",
-  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial#readme",
+  "author": "savrcbl",
+  "homepage": "https://github.com/savrcbl/tc66-serial#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/tc66-serial.git",
+    "url": "git+https://github.com/savrcbl/tc66-serial.git",
     "directory": "js"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial/issues"
+    "url": "https://github.com/savrcbl/tc66-serial/issues"
   },
   "type": "module",
   "main": "./dist/index.cjs",
