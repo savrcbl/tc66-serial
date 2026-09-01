@@ -15,4 +15,4 @@ Console.WriteLine($"{reading.Voltage:F4} V  {reading.Current:F5} A  {reading.Pow
 ```
 
 Full documentation, protocol notes, and the companion npm package live in the
-[GitHub repository](https://github.com/YOUR_GITHUB_USERNAME/tc66-serial).
+[GitHub repository](https://github.com/savrcbl/tc66-serial).
