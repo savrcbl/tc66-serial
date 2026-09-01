@@ -13,4 +13,4 @@ with Tc66Client("/dev/ttyACM0") as client:  # or "COM10" on Windows
 ```
 
 Full documentation, protocol notes, and the companion .NET and npm packages live
-in the [GitHub repository](https://github.com/YOUR_GITHUB_USERNAME/tc66-serial).
+in the [GitHub repository](https://github.com/savrcbl/tc66-serial).
