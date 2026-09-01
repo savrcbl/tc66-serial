@@ -17,4 +17,4 @@ await client.disconnect();
 ```
 
 Full documentation, protocol notes, and the companion .NET package live in the
-[GitHub repository](https://github.com/YOUR_GITHUB_USERNAME/tc66-serial).
+[GitHub repository](https://github.com/savrcbl/tc66-serial).
