@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tc66-serial"
-version = "1.0.0"
+version = "1.0.1"
 description = "A library for reading live measurements from Ruideng (RD/RDTech) TC66 and TC66C USB power meters over a serial connection."
 readme = "README.md"
 license = { text = "MIT" }
