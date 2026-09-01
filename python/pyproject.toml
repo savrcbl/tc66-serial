@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tc66-serial"
-version = "0.1.0"
+version = "1.0.0"
 description = "A library for reading live measurements from Ruideng (RD/RDTech) TC66 and TC66C USB power meters over a serial connection."
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "YOUR_NAME" }]
+authors = [{ name = "savrcbl" }]
 requires-python = ">=3.8"
 keywords = ["tc66", "tc66c", "usb", "power-meter", "serialport", "rdtech", "ruideng", "electronics"]
 classifiers = [
@@ -31,9 +31,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial"
-Repository = "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial"
-Issues = "https://github.com/YOUR_GITHUB_USERNAME/tc66-serial/issues"
+Homepage = "https://github.com/savrcbl/tc66-serial"
+Repository = "https://github.com/savrcbl/tc66-serial"
+Issues = "https://github.com/savrcbl/tc66-serial/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tc66_serial"]
