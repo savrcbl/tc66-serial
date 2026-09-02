@@ -1,6 +1,6 @@
 # Tc66Serial
 
-A .NET library for reading live measurements from RDTech/FNIRSI **TC66** and **TC66C**
+A .NET library for reading live measurements from RDTech **TC66** and **TC66C**
 USB power meters over a serial connection: voltage, current, power, resistance, D+/D-
 line voltage, and the two mAh/mWh accumulator groups.
 
