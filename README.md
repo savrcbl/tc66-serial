@@ -26,6 +26,20 @@ This repo contains two packages, built from the same reverse-engineered protocol
 Other RDTech USB testers that use the same "getva" / AES-256-ECB packet format may also
 work, but are untested.
 
+## Driver setup (Windows)
+
+TC66/TC66C devices show up as a USB serial port, which Windows needs a driver for
+before it will appear as a COM port. Download and install it from
+[savrcbl/TC66](https://github.com/savrcbl/TC66/tree/master/RuiDengUSBMeter_V1.0.0.6)
+before connecting the device.
+
+If `GetAvailablePorts()` / `listPorts()` / `get_available_ports()` returns an empty
+list, this is almost always the cause — check Windows Device Manager for an unknown
+device under "Other devices" or "Ports (COM & LPT)".
+
+Linux and macOS generally handle USB-serial devices without an extra driver, though
+this can vary by OS version.
+
 ## Installation
 
 **.NET:**
