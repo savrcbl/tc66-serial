@@ -5,7 +5,7 @@ serial (virtual COM port) interface — decrypting and parsing the device's live
 measurement stream into voltage, current, power, resistance, D+/D- line voltage, and
 capacity/energy counters.
 
-This repo contains two packages, built from the same reverse-engineered protocol:
+This repo contains three packages, built from the same reverse-engineered protocol:
 
 | Package | Ecosystem | Path |
 |---|---|---|
@@ -126,6 +126,25 @@ See the field-by-field offset tables in
 [`python/src/tc66_serial/codec.py`](python/src/tc66_serial/codec.py) for exact byte
 offsets and scaling factors.
 
+## Credits and protocol provenance
+
+This library is an independent implementation of the reverse-engineered
+TC66/TC66C protocol. It doesn't claim to have discovered any of this protocol
+itself — that credit belongs to the community work below:
+
+- **Ben V. Brown ([Ralim/TC66C](https://github.com/Ralim/TC66C))** reverse-engineered
+  the device's BLE protocol, including the `getva` command, the three 64-byte
+  `pac1`/`pac2`/`pac3` packet structure, and the static AES-256-ECB key used to
+  encrypt measurement data. His full write-up is at
+  [ralimtek.com](https://ralimtek.com/posts/2019/tc66/).
+- **[sigrok's RDTech_TC66C wiki page](https://sigrok.org/wiki/RDTech_TC66C)**
+  documents how that same protocol — packet structure, AES key, and CRC-16/MODBUS
+  checksums — carries over to the device's USB/serial (CDC) interface, which is
+  the interface this library actually talks to.
+
+The .NET, Node.js, and Python code in this repository is a separate, independent
+implementation built around that documented protocol.
+
 ## Repository layout
 
 ```
@@ -182,8 +201,8 @@ Bump the version in `dotnet/Tc66Serial/Tc66Serial.csproj`, `js/package.json`, an
 `python/pyproject.toml`, commit, tag, and push:
 
 ```sh
-git tag v0.1.0
-git push origin v0.1.0
+git tag v1.0.2
+git push origin v1.0.2
 ```
 
 ## Contributing
