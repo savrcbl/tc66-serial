@@ -21,7 +21,9 @@ This repo contains three packages, built from the same reverse-engineered protoc
 ## Supported devices
 
 - TC66
-- TC66C
+- TC66C, over its **USB/serial** interface only — the TC66C's separate Bluetooth
+  (BLE) interface uses a different command format and is not supported by this
+  library.
 
 Other RDTech USB testers that use the same "getva" / AES-256-ECB packet format may also
 work, but are untested.
