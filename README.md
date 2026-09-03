@@ -201,8 +201,8 @@ Bump the version in `dotnet/Tc66Serial/Tc66Serial.csproj`, `js/package.json`, an
 `python/pyproject.toml`, commit, tag, and push:
 
 ```sh
-git tag v1.0.2
-git push origin v1.0.2
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
 ## Contributing
